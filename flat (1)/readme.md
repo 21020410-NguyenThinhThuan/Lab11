@@ -14,8 +14,6 @@ Mã nguồn trên là một trang web đơn giản để giải phương trình 
 
 <body>: Phần này chứa nội dung hiển thị trên trang web.
 
-<h1>Phương trình bậc hai</h1>: Đây là tiêu đề chính của trang web, được hiển thị dưới dạng tiêu đề cấp 1.
-
 <?php ... ?>: Đây là mã PHP, thực hiện các xử lý logic phía máy chủ.
 
 Trong mã PHP, đầu tiên kiểm tra xem các tham số a, b, c có được truyền vào thông qua phương thức GET hay không. Nếu không, hiển thị thông báo "Nhập a, b c".

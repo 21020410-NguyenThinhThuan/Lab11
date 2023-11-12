@@ -46,8 +46,6 @@ Mã HTML trên định nghĩa giao diện người dùng cho ứng dụng tính 
 
 <body>: Bắt đầu phần tử body, chứa nội dung hiển thị trên trình duyệt.
 
-<h1>Tổng hai số</h1>: Hiển thị tiêu đề "Tổng hai số" dưới dạng tiêu đề cấp 1.
-
 <?php require_once("c.php"); $ctrl = new SumControl(); $ctrl->proc(); ?>: Gọi tệp tin "c.php" sử dụng hàm require_once() và tạo một đối tượng SumControl để xử lý yêu cầu.
 
 <form method="post">: Bắt đầu một biểu mẫu HTML với phương thức gửi dữ liệu là POST.

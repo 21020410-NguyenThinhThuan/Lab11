@@ -67,8 +67,6 @@ Mã nguồn trên là một trang HTML đơn giản có chức năng tính tổn
 
 <body>: Bắt đầu phần thân trang.
 
-<h1>Tổng hai số</h1>: Hiển thị tiêu đề "Tổng hai số" dưới dạng tiêu đề cấp 1.
-
 <div>: Bắt đầu một phần tử div để chứa kết quả và các phần tử nhập liệu.
 
 <label id="lx"></label>: Đặt một thẻ label với id "lx" để hiển thị giá trị x.
@@ -132,3 +130,12 @@ document.getElementById("y").value = o.y;: Cập nhật giá trị y trong phầ
 </body></html>: Kết thúc phần thân trang và HTML.
 
 # tong ket
+Mô hình MC (Model-Controller) là một mô hình phát triển phần mềm phổ biến, trong đó code được chia thành các thành phần riêng biệt để quản lý logic và tách biệt giữa các phần khác nhau của ứng dụng. Mô hình MC thường được sử dụng trong việc xây dựng ứng dụng web, trong đó MC được chia thành các thành phần như sau:
+
+Model (M): Đại diện cho dữ liệu và logic xử lý dữ liệu. Trong bài mẫu, model không được rõ ràng định nghĩa, nhưng có thể giả định rằng có một tệp tin "c.php" được gọi để xử lý dữ liệu và trả về kết quả.
+
+Controller (C): Đảm nhiệm xử lý logic và điều khiển hoạt động của ứng dụng. Trong bài mẫu, các hàm xử lý sự kiện được định nghĩa trong thẻ <script> để gửi yêu cầu AJAX hoặc Fetch API đến "c.php" và nhận kết quả trả về. Các hàm này sẽ được gọi khi người dùng nhấp vào nút "Chấp nhận (AJAX)" hoặc "Chấp nhận (Fetch)".
+
+View (V): Đại diện cho giao diện người dùng. Trong bài mẫu, các thẻ HTML được sử dụng để hiển thị các phần tử giao diện như tiêu đề, nhãn, ô nhập và nút. Khi nhận được kết quả từ "c.php", các phần tử trong DOM (Document Object Model) sẽ được cập nhật thông qua JavaScript để hiển thị kết quả tính toán.
+
+Mô hình MC tách biệt logic ứng dụng thành các thành phần riêng biệt, giúp tăng tính module, khả năng bảo trì và phát triển ứng dụng. Trong bài mẫu, controller là các hàm xử lý sự kiện trong JavaScript, model là logic xử lý dữ liệu trong tệp "c.php", và view là các phần tử HTML để hiển thị giao diện người dùng.

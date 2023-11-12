@@ -14,8 +14,6 @@ Mã nguồn trên là một trang web đơn giản để giải phương trình 
 
 <body>: Phần này chứa nội dung hiển thị trên trang web.
 
-<h1>Phương trình bậc hai</h1>: Đây là tiêu đề chính của trang web, được hiển thị dưới dạng tiêu đề cấp 1.
-
 <?php ... ?>: Đây là mã PHP, thực hiện các xử lý logic phía máy chủ.
 
 Trong mã PHP, đầu tiên kiểm tra xem các tham số a, b, c có được truyền vào thông qua phương thức GET hay không. Nếu không, hiển thị thông báo "Nhập a, b c".
@@ -39,12 +37,13 @@ Giá trị của a, b, c được điền vào các ô input bằng cách sử d
 Tổng quan, mã nguồn trên kết hợp mã backend (PHP) và mã frontend (HTML) để tạo ra một trang web cho phép người dùng nhập các hệ số của phương trình bậc hai và hiển thị kết quả giải phương trình.
 
 # tong ket
-Bài mẫu được phát triển theo mô hình cổ điển Flat (còn được gọi là mô hình MVC - Model-View-Controller). Dưới đây là phân tích cách mà các thành phần trong bài mẫu tương ứng với mô hình Flat:
+Bài mẫu này được phát triển theo mô hình cổ điển của ứng dụng web, trong đó có sự phân chia rõ ràng giữa phần backend và frontend.
 
-Model (SumModel): Lớp SumModel đại diện cho phần model trong mô hình. Nó chứa dữ liệu và logic để tính tổng hai số. Trong trường hợp này, các thuộc tính $x, $y lưu trữ hai số đầu vào, và phương thức solve() tính tổng và lưu kết quả vào thuộc tính $sum. Ngoài ra, phương thức getSum() trả về giá trị của tổng.
-
-View (SumView): Lớp SumView đại diện cho phần view trong mô hình. Nó có nhiệm vụ hiển thị kết quả tính tổng hai số. Trong trường hợp này, phương thức render() tạo một chuỗi HTML để hiển thị số $x, ký hiệu cộng, số $y và kết quả tổng $ret trong một đoạn văn bản. Điều này cho phép hiển thị kết quả tính toán trên trang web.
-
-Controller (SumControl): Trong trường hợp này, không có lớp tường minh đại diện cho phần controller. Thay vào đó, một đoạn mã trong tệp tin gọi lớp SumControl làm controller. Lớp này nhận dữ liệu đầu vào từ người dùng (thông qua biểu mẫu HTML) và tạo đối tượng SumModel để xử lý yêu cầu tính tổng. Sau đó, nó gọi phương thức solve() để tính tổng và tạo một đối tượng SumView để hiển thị kết quả.
-
-Tổng thể, mô hình Flat (MVC) được áp dụng trong bài mẫu này để phân tách logic xử lý (model), hiển thị (view), và điều khiển (controller). Điều này giúp mã nguồn dễ đọc, dễ bảo trì và mở rộng trong tương lai.
+Backend: Phần backend của ứng dụng được triển khai bằng PHP. Nó chịu trách nhiệm xử lý dữ liệu nhập từ người dùng và thực hiện các tính toán để giải quyết phương trình bậc hai. Cụ thể, các bước xử lý dữ liệu và giải quyết phương trình được thực hiện trong khối mã PHP nằm trong thẻ <?php ?>.
+Đầu tiên, mã kiểm tra xem các thông số a, b và c đã được cung cấp dưới dạng tham số GET trong URL hay chưa. Nếu thiếu bất kỳ thông số nào, một thông báo lỗi sẽ được hiển thị.
+Sau đó, mã kiểm tra tính hợp lệ của các thông số. Nếu bất kỳ thông số nào không phải là số, một thông báo lỗi sẽ được hiển thị.
+Nếu tất cả các thông số hợp lệ, mã sẽ tiếp tục giải phương trình bậc hai dựa trên các hệ số đã cung cấp.
+Nếu a khác không, đó là phương trình bậc hai. Mã tính toán delta (delta = b*b - 4*a*c) và hiển thị thông báo phù hợp tùy thuộc vào giá trị của delta.
+Nếu a bằng không, đó là phương trình bậc nhất. Mã kiểm tra giá trị của b để xác định số lượng nghiệm và hiển thị thông báo tương ứng.
+Frontend: Phần frontend của ứng dụng được triển khai bằng HTML. Nó đảm nhận việc hiển thị giao diện người dùng và gửi dữ liệu từ người dùng đến phần backend để xử lý. Cụ thể, trong đoạn mã HTML, có một biểu mẫu (<form>) chứa các trường đầu vào để người dùng nhập các hệ số a, b, và c. Giá trị của các trường này được điền trước nếu chúng đã được cung cấp dưới dạng tham số GET trong URL. Biểu mẫu cũng có một nút gửi (<input type="submit">) để người dùng có thể gửi dữ liệu để giải quyết phương trình.
+Tổng quan, mô hình cổ điển này phân chia rõ ràng giữa phần backend và frontend, trong đó phần backend xử lý dữ liệu và tính toán, trong khi phần frontend quản lý giao diện người dùng và tương tác với người dùng.
